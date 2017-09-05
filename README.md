@@ -21,4 +21,8 @@ Contributions
 
 - Jamie (jmaher5): Worked mostly on the C++ backend. Performed the benchmarking tests. Created a random map generator for testing purposes. 
 
+- Nick (npalutsi): Built the user interface and framework for HTML and JS. Worked on transferring the algorithm to Javascript.
+
+- Henry (hlong2): Worked on transferring the algorithm to Javascript and the user interface.
+
 
