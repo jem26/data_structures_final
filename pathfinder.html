@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>2D Dynamic Simulated Clock</title>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+uniform mat4 ctMatrix;
+uniform mat4 projMatrix;
+
+void
+main()
+{
+    gl_Position = projMatrix * ctMatrix * vPosition;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+uniform vec3 baseColor;
+
+void
+main()
+{
+    gl_FragColor = vec4( baseColor, 1.0 );
+    // gl_FragColor = baseColor;
+}
+</script>
+
+<script type="text/javascript" src="./Common/webgl-utils.js"></script>
+<script type="text/javascript" src="./Common/initShaders.js"></script>
+<script type="text/javascript" src="./Common/MV.js"></script>
+<script type="text/javascript" src="pathfinder.js"></script>
+</head>
+<center>
+<div id='date'></div>
+
+<body>
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+<form>
+	<div id='print'></div>
+    <input type="radio" name="function" id="simOn">Simulation On <br>
+    <input type="radio" name="function" id="simOff" checked>Simulation Off <br>
+	<button id="refresh">Refresh</button>
+</form>
+</body>
+</center>
+</html>
